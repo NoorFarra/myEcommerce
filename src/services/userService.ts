@@ -16,7 +16,7 @@ export const register = async ({firstName, lastName, email, password}: registerP
     }
     
     if(password.length <= 8) {
-        return {data: "Password must be more than 8 charachters", statusCode: 400}
+        return {data: "Password must be more than 8 characters", statusCode: 400}
     }
 
     const hashedPassword = await bcrypt.hash(password, 10)
